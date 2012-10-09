@@ -61,10 +61,11 @@ exports.toGeojson = function(features) {
 function invoke(params, path, callback) {
   addStatic(params);
 
-  request.post(API_SERVER + path, { form: { 'ajaxargs': JSON.stringify(params)}
-  }, function (error, response, body) {
-    callback(JSON.parse(body));
-  });
+  request.post(API_SERVER + path, {form: {'ajaxargs': JSON.stringify(params)}},
+    function (error, response, body) {
+      callback(JSON.parse(body));
+    }
+  );
 }
 
 // Add static parameters to the requests' parameter
