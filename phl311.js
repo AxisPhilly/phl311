@@ -7,20 +7,21 @@ var STATIC_PARAMS = {
 
 exports.version = '0.0.1';
 
+// Get requests by category
 exports.requests = function(params, callback){
   invoke(params, 'get_map_requests', function(resp) {
     callback(resp);
   });
 };
 
+// Get the details for a single request by request ID
 exports.request = function(id, callback) {
   invoke({"request_id": id}, 'get_map_request_details', function(resp) {
     callback(resp);
   });
 };
 
-// Convience function to turn a 311 request response
-// set into a GeoJSON object.
+// Convience function to turn a requests response into a GeoJSON object
 exports.toGeojson = function(features) {
   var geojson = {
     "type": "FeatureCollection",
@@ -55,6 +56,8 @@ exports.toGeojson = function(features) {
 };
 
 // Helpers
+
+// Make a call to the server
 function invoke(params, path, callback) {
   addStatic(params);
 
@@ -64,6 +67,8 @@ function invoke(params, path, callback) {
   });
 }
 
+// Add static parameters to the requests' parameter
+// object that was passed to invoke
 function addStatic(params) {
   params.space_id = STATIC_PARAMS.space_id;
 }
