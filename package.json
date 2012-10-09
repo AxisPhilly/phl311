@@ -1,0 +1,23 @@
+{
+  "name": "phl311",
+  "description": "A library for getting and working with the Philadelphia 311 app data",
+  "author": "Casey Thomas <c@cpt.ph>",
+  "version": "0.0.1",
+  "main": "./phl311",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/caseypt/phl311.git"
+  },
+  "dependencies": {
+    "request": ">=2.11.1"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "engines": {
+    "node": "0.8.x"
+  },
+  "scripts": {
+    "test": "mocha"
+  }
+}
