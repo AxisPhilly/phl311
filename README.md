@@ -9,3 +9,8 @@ A Node.js library for getting and working with data from the [Philadelphia 311 A
 ## Getting Started
 
     var phl311 = require('phl311');
+
+## Testing
+
+    npm install -g mocha
+    $ /path/to/phl311 mocha
